@@ -1,0 +1,11 @@
+{
+  "launch": {
+    "configurations": [],
+    "compounds": []
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "prettier.tabWidth": 2,
+  "prettier.jsxSingleQuote": true
+}

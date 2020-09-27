@@ -1,13 +1,33 @@
+:root {
+  --white: #ffffff;
+  --dark-blue: #07074d;
+  --blue: #046af3;
+  --deep-grey: #79828e;
+  --green: #01d066;
+  --red: #fd3758;
+  --light-grey: #ececec;
+  --deep-green: #02c39a;
+}
+
+@font-face {
+  font-family: product-sans;
+  src: url('./assets/fonts/Product\ Sans\ Regular.ttf');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: product-sans;
 }

@@ -1,0 +1,54 @@
+@import '../../../styles/index';
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: convertPixelToRem(240px);
+  background-color: var(--dark-blue);
+  height: 100vh;
+  padding: convertPixelToRem(34px) convertPixelToRem(46px) convertPixelToRem(20px) convertPixelToRem(38px);
+  display: grid;
+  row-gap: convertPixelToRem(66px);
+  align-content: flex-start;
+}
+
+.containerLinks {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  column-gap: convertPixelToRem(12.48px);
+  height: max-content;
+  color: var(--white);
+  text-decoration: none;
+  padding-left: convertPixelToRem(15.4px);
+  width: convertPixelToRem(154.75px);
+}
+
+.containerLinksActive {
+  background-color: rgba(4, 106, 243, 0.15);
+  padding: convertPixelToRem(10.07px) convertPixelToRem(1px) convertPixelToRem(10.07px)
+    convertPixelToRem(15.4px);
+  border-radius: convertPixelToRem(8px);
+}
+
+.containerLinksIcons {
+  width: convertPixelToRem(18px);
+  height: convertPixelToRem(18px);
+  * {
+    color: var(--white);
+    fill: var(--white);
+  }
+}
+
+.containerLinksIconsLogo {
+  width: convertPixelToRem(34.75px);
+  height: convertPixelToRem(34.75px);
+}
+
+.containerSubsection {
+  height: max-content;
+  display: grid;
+  row-gap: convertPixelToRem(31px);
+}
