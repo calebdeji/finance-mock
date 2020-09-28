@@ -4,7 +4,6 @@ import styles from '../styles/recentTransactions.module.scss';
 import formatCurrency, { formateNumber } from '../../../libs/format';
 import { ReactComponent as IncreamentIcon } from '../images/increament.svg';
 import { ReactComponent as DecrementIcon } from '../images/decrement.svg';
-import { ReactComponent as TransactionDropdown } from '../images/transactionDropDown.svg';
 
 const transactions = [
   {
@@ -94,47 +93,49 @@ const RecentTransactions = () => {
         <thead
           className={`${styles.containerTableRow} ${styles.containerTableRowWithoutBorder} ${styles.containerTableRowHeader}`}
         >
-          <h2 className={`${styles.bigText} ${styles.sectionsTitle}`}> {formatCurrency(28941.69)} </h2>
-          <span className={styles.containerTableRowIncome}>
-            <span className={styles.subText}> +1.01% </span>
-            <IncreamentIcon />
-          </span>
+          <tr className={`${styles.bigText} ${styles.sectionsTitle}`}> {formatCurrency(28941.69)} </tr>
+          <tr className={styles.containerTableRowIncome}>
+            <td className={styles.subText}> +1.01% </td>
+            <td>
+              <IncreamentIcon />
+            </td>
+          </tr>
         </thead>
         <tbody>
           <tr
             className={`${styles.containerTableRow} ${styles.containerTableRowWithoutBorder} ${styles.containerTableRowDropDownContainer}`}
           >
-            <div className={styles.containerTableRowSelect}>
+            <td className={styles.containerTableRowSelect}>
               <select name='bank' id='bank' className={styles.containerTableRowSelectField}>
                 {dropDownBank.map(({ value, id, text }) => {
                   return (
                     <option value={value} key={id}>
-                      {text}{' '}
+                      {text}
                     </option>
                   );
                 })}
                 }
               </select>
-            </div>
-            <div className={styles.containerTableRowSelect}>
+            </td>
+            <td className={styles.containerTableRowSelect}>
               <select name='income' id='income' className={styles.containerTableRowSelectField}>
                 {/* <option value='income'> income </option> */}
                 {dropDownIncome.map(({ value, id, text }) => {
                   return (
                     <option value={value} key={id}>
-                      {text}{' '}
+                      {text}
                     </option>
                   );
                 })}
               </select>
-            </div>
+            </td>
           </tr>
           {transactions.map(({ id, income, amount, incomeType }) => {
             const isIncrement = incomeType === 'increment';
             return (
-              <tr className={styles.containerTableRow}>
-                <span className={styles.subText}>NP {formateNumber(amount, 2)}</span>
-                <span className={styles.containerTableRowIncome}>
+              <tr className={styles.containerTableRow} key={id}>
+                <td className={styles.subText}>NP {formateNumber(amount, 2)}</td>
+                <td className={styles.containerTableRowIncome}>
                   <span
                     className={`${styles.subText} ${
                       isIncrement
@@ -146,7 +147,7 @@ const RecentTransactions = () => {
                     {formateNumber(income, 1)}%
                   </span>
                   {isIncrement ? <IncreamentIcon /> : <DecrementIcon />}
-                </span>
+                </td>
               </tr>
             );
           })}

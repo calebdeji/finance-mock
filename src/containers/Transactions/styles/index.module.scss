@@ -8,3 +8,10 @@
   grid-template-columns: 2fr 2.5fr 1.5fr;
   padding: convertPixelToRem(20px) 0 convertPixelToRem(28px);
 }
+
+@media all and (max-width: 1000px) {
+  .container {
+    grid-auto-flow: row;
+    grid-template-areas: 'recent-transactions' 'transactions-summary' 'users-transactions' 'subrecent-transactions' 'active-cards' 'map';
+  }
+}

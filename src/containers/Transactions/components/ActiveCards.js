@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 
 import styles from '../styles/activeCards.module.scss';
 import { ReactComponent as CardIcon } from '../images/cardIcon.svg';
@@ -6,16 +6,6 @@ import { ReactComponent as CardIcon } from '../images/cardIcon.svg';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-var settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  // centerMode: true, // enable center mode
-  // centerPadding: '50px',
-};
 
 const cards = [
   {
@@ -41,33 +31,7 @@ const cards = [
   },
 ];
 
-const cardsButton = [
-  { id: 'card-button-1', index: 0 },
-  { id: 'card-button-2', index: 1 },
-  { id: 'card-button-3', index: 2 },
-];
-
 const ActiveCards = () => {
-  const [currentIndex, setCurrentIndex] = useState(1);
-
-  const ref = useRef(null);
-
-  const handleClick = ({ target: { dataset } }) => {
-    setCurrentIndex((currentIndex) => {
-      const dataSetIndex = Number(dataset.index);
-      if (currentIndex > dataSetIndex) {
-        ref.current.scrollTo({
-          right: dataSetIndex * 263,
-        });
-      } else {
-        ref.current.scrollTo({
-          left: dataSetIndex * 263,
-        });
-      }
-      return dataSetIndex;
-    });
-  };
-
   return (
     <section className={styles.container}>
       <h2 className={`${styles.bigText} ${styles.sectionsTitle}`}> Active Cards </h2>

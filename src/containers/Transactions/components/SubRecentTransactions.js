@@ -1,5 +1,5 @@
 import React from 'react';
-import { AreaChart, XAxis, Area, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 
 import formatCurrency, { formateNumber } from '../../../libs/format';
 import styles from '../styles/subRecentTransactions.module.scss';
@@ -88,7 +88,7 @@ const SubRecentTransactions = () => {
     <section className={styles.container}>
       {data.map(({ bank, id, amount, rangeData }, index) => {
         return (
-          <div className={styles.containerTransaction}>
+          <div className={styles.containerTransaction} key={id}>
             <div className={styles.containerTransactionNumbers}>
               <span className={styles.subText}>NP {formateNumber(bank, 2)}</span>
               <span className={styles.mainText}> {formatCurrency(amount)}</span>
