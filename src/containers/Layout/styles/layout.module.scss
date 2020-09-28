@@ -1,0 +1,9 @@
+@import '../../../styles/index';
+
+.main {
+  margin-left: convertPixelToRem(240px);
+  padding: convertPixelToRem(40.33px) convertPixelToRem(40.36px) convertPixelToRem(28.33px)
+    convertPixelToRem(40.36px);
+  background-color: #e5e5e5;
+  min-height: 100vh;
+}

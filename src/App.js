@@ -8,7 +8,9 @@ const App = () => {
   return (
     <Router>
       <Layout>
-        <Switch>{/* <Route path='/transactions' component={Transactions} /> */}</Switch>
+        <Switch>
+          <Route path='/transactions' component={Transactions} />
+        </Switch>
       </Layout>
     </Router>
   );

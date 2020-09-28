@@ -1,0 +1,47 @@
+@import 'transactionsCommonStyles.module';
+
+.container {
+  padding: convertPixelToRem(31.36px) convertPixelToRem(36.59px) convertPixelToRem(42.36px);
+  @include containerHolder();
+  display: grid;
+  row-gap: convertPixelToRem(22.58px);
+  grid-area: transactions-summary;
+}
+
+.containerGraph {
+  width: 100%;
+}
+
+.containerMeta {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.containerMetaSection {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: convertPixelToRem(10px);
+  align-items: center;
+  color: #303956;
+}
+
+.containerMetaSectionRadialSpan {
+  display: block;
+  border-radius: 100%;
+  width: convertPixelToRem(8px);
+  height: convertPixelToRem(8px);
+}
+
+.containerMetaSectionRadialSpanATM {
+  background-color: var(--blue);
+}
+
+.containerMetaSectionRadialSpanRemittance {
+  background-color: var(--red);
+}
+
+.containerMetaSectionRadialSpanOnline {
+  background-color: var(--deep-green);
+}

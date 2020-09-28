@@ -1,0 +1,10 @@
+@import '../../../styles/index';
+
+.container {
+  display: grid;
+  grid-template-areas: 'recent-transactions transactions-summary users-transactions' 'subrecent-transactions active-cards users-transactions' 'subrecent-transactions active-cards map';
+  column-gap: convertPixelToRem(20px);
+  row-gap: convertPixelToRem(20px);
+  grid-template-columns: 2fr 2.5fr 1.5fr;
+  padding: convertPixelToRem(20px) 0 convertPixelToRem(28px);
+}

@@ -1,0 +1,80 @@
+@import 'transactionsCommonStyles.module';
+
+.container {
+  grid-area: users-transactions;
+  @include containerHolder;
+  padding: convertPixelToRem(31.36px) convertPixelToRem(22.28px) convertPixelToRem(0px)
+    convertPixelToRem(22.7px);
+
+  * {
+    color: var(--dark-blue);
+  }
+}
+
+.containerDropdownSection {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: convertPixelToRem(5.38px);
+  padding: convertPixelToRem(12.42px) 0 convertPixelToRem(20.3px);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.containerDropdownSectionSelect {
+  position: relative;
+  height: convertPixelToRem(28.96px);
+  border-radius: convertPixelToRem(6px);
+  background-color: rgba(121, 130, 142, 0.1);
+  display: flex;
+  align-items: center;
+  &::after {
+    pointer-events: none;
+    content: url('../images/dateDropDown.svg');
+    position: absolute;
+    right: convertPixelToRem(10px);
+    top: convertPixelToRem(0px);
+    font-size: convertPixelToRem(20px);
+  }
+}
+
+.containerDropdownSectionSelectField {
+  background: transparent;
+  color: black;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  display: block;
+  width: 100%;
+  padding-left: convertPixelToRem(9.5px);
+}
+
+.containerTransactions {
+  display: grid;
+}
+
+.containerTransactionsSection {
+  display: grid;
+  grid-template-columns: max-content auto;
+  grid-template-areas: 'image name' 'image amount';
+  align-items: center;
+  column-gap: convertPixelToRem(16px);
+  border-bottom: solid convertPixelToRem(0.75px) var(--light-grey);
+  padding: convertPixelToRem(13px) 0 convertPixelToRem(14px);
+}
+
+.containerTransactionsSectionImage {
+  width: convertPixelToRem(48px);
+  height: convertPixelToRem(48px);
+  border-radius: 100%;
+  grid-area: image;
+}
+
+.containerTransactionsSectionName {
+  grid-area: name;
+}
+
+.containerTransactionsSectionWorth {
+  grid-area: amount;
+  color: var(--deep-grey);
+}

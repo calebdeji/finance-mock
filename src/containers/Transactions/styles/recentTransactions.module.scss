@@ -1,0 +1,79 @@
+@import 'transactionsCommonStyles.module';
+
+.container {
+  padding: convertPixelToRem(31.36px) convertPixelToRem(42.24px) convertPixelToRem(28.36px)
+    convertPixelToRem(31.05px);
+  display: grid;
+  row-gap: convertPixelToRem(22.58px);
+  grid-area: recent-transactions;
+  @include containerHolder();
+}
+
+.containerTable {
+  border-collapse: collapse;
+  display: grid;
+  row-gap: convertPixelToRem(20px);
+  height: max-content;
+}
+
+.containerTableRow {
+  border-bottom: convertPixelToRem(0.75px) solid var(--light-grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: convertPixelToRem(10px) 0 convertPixelToRem(11px);
+}
+
+.containerTableRowHeader {
+  padding: 0;
+}
+
+.containerTableRowDropDownContainer {
+  padding-bottom: convertPixelToRem(10px);
+}
+
+.containerTableRowWithoutBorder {
+  border: none;
+}
+
+.containerTableRowSelect {
+  position: relative;
+  &:first-child {
+    padding-right: convertPixelToRem(10px);
+  }
+  &:last-child {
+    padding-right: convertPixelToRem(20px);
+  }
+  &::after {
+    content: url('../images/transactionDropDown.svg');
+    display: block;
+    position: absolute;
+    right: 0;
+    top: convertPixelToRem(3px);
+  }
+}
+
+.containerTableRowSelectField {
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+}
+
+.containerTableRowIncome {
+  display: grid;
+  align-items: center;
+  width: max-content;
+  justify-content: flex-end;
+  grid-auto-flow: column;
+  column-gap: convertPixelToRem(5.17px);
+}
+
+.containerTableRowIncomeIncrement {
+  color: var(--green);
+}
+
+.containerTableRowIncomeDecrement {
+  color: var(--red);
+}

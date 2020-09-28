@@ -1,0 +1,13 @@
+@import 'transactionsCommonStyles.module';
+
+.container {
+  grid-area: map;
+  @include containerHolder;
+  height: convertPixelToRem(180.96px);
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,83 @@
+@import '../styles/transactionsCommonStyles.module';
+
+.container {
+  grid-area: active-cards;
+  @include containerHolder;
+  padding: convertPixelToRem(33.8px) 0 convertPixelToRem(16.67px) convertPixelToRem(33.92px);
+  display: grid;
+}
+
+.containerCards {
+  overflow: hidden;
+}
+
+.containerCardsEachCard {
+  width: convertPixelToRem(262.64px);
+  height: convertPixelToRem(165.76px);
+  display: grid !important;
+  grid-auto-flow: row;
+  row-gap: convertPixelToRem(20.95px);
+  background: #046af3;
+  border-radius: convertPixelToRem(10px);
+  padding: convertPixelToRem(16.41px) convertPixelToRem(26.63px) convertPixelToRem(26.26px)
+    convertPixelToRem(17.24px);
+
+  * {
+    color: var(--white);
+  }
+  &::last-child {
+    margin-right: convertPixelToRem(33.92px);
+  }
+}
+
+:global(.slick-slide > div) {
+  margin: 0 10px;
+}
+
+:global(.slick-list) {
+  margin: 0 -10px;
+}
+
+.containerCardsEachCardNumber {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: convertPixelToRem(21.05px);
+  justify-content: center;
+}
+
+.containerCardsEachCardMeta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerCardsEachCardMetaSubSection {
+  display: grid;
+  row-gap: convertPixelToRem(8.32px);
+
+  span {
+    &:first-child {
+      color: var(--light-grey);
+    }
+  }
+}
+
+.containerCardsButtons {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  justify-content: flex-start;
+  column-gap: convertPixelToRem(4px);
+  justify-content: center;
+}
+
+.containerCardsButtonsElement {
+  display: block;
+  width: convertPixelToRem(6px);
+  height: convertPixelToRem(6px);
+  background-color: var(--deep-grey);
+  border-radius: 100%;
+  border: none;
+
+  @include hoverable {
+    cursor: pointer;
+  }
+}

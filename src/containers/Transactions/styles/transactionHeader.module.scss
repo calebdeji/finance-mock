@@ -1,0 +1,90 @@
+@import '../../../styles/index';
+@import 'transactionsCommonStyles.module';
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: convertPixelToRem(14.98px);
+}
+
+@mixin containerElement {
+  @include containerHolder();
+  align-items: center;
+  height: convertPixelToRem(47.47px);
+}
+
+.containerForm {
+  @include containerElement();
+  padding-left: convertPixelToRem(21.53px);
+  padding-right: convertPixelToRem(10px);
+  display: grid;
+  grid-template-columns: max-content auto;
+  column-gap: convertPixelToRem(12.24px);
+}
+
+.containerFormInput {
+  border: none;
+  background: transparent;
+  outline: none;
+  &::placeholder {
+    font-size: convertPixelToRem(14px);
+    line-height: convertPixelToRem(17px);
+  }
+}
+
+.containerDate {
+  @include containerElement();
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  padding-left: convertPixelToRem(17px);
+  padding-right: convertPixelToRem(22.6px);
+  column-gap: convertPixelToRem(11.08px);
+  position: relative;
+}
+
+.containerDateInput {
+  border: none;
+  background: transparent;
+  outline: none;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    left: 0;
+    margin: auto;
+  }
+}
+
+.containerMeta {
+  @include containerElement();
+  padding-left: convertPixelToRem(16.55px);
+  padding-right: convertPixelToRem(12.97px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerMetaUser {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: convertPixelToRem(14.9px);
+  width: max-content;
+  align-items: center;
+}
+
+.containerMetaUserName {
+  color: var(--deep-grey);
+}
+
+.containerMetaUserImage {
+  width: convertPixelToRem(32.31px);
+  height: convertPixelToRem(33.3px);
+  border-radius: convertPixelToRem(6px);
+}

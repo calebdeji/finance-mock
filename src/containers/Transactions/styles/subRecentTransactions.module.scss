@@ -1,0 +1,33 @@
+@import 'transactionsCommonStyles.module';
+
+.container {
+  grid-area: subrecent-transactions;
+  display: grid;
+  row-gap: convertPixelToRem(20px);
+}
+
+.containerTransaction {
+  @include containerHolder;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 convertPixelToRem(14.79px) 0 convertPixelToRem(15.66px);
+  height: convertPixelToRem(83.51px);
+}
+
+.containerTransactionNumbers {
+  display: grid;
+  row-gap: convertPixelToRem(5.5px);
+  height: max-content;
+
+  span {
+    &:first-child {
+      color: #303956;
+    }
+    &:last-child {
+      color: var(--dark-blue);
+      font-weight: bolder;
+    }
+  }
+}
