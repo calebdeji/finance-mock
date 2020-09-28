@@ -7,6 +7,14 @@
   column-gap: convertPixelToRem(14.98px);
 }
 
+@media all and (max-width: 1000px) {
+  .container {
+    grid-auto-flow: row;
+    grid-template-columns: unset;
+    row-gap: convertPixelToRem(20px);
+  }
+}
+
 @mixin containerElement {
   @include containerHolder();
   align-items: center;

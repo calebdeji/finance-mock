@@ -2,6 +2,7 @@ import React from 'react';
 import { BarChart, Bar, XAxis, ResponsiveContainer } from 'recharts';
 
 import styles from '../styles/transactionSummary.module.scss';
+
 const data = [
   {
     name: 'Mon',

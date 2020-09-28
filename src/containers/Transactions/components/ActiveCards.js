@@ -1,11 +1,10 @@
 import React from 'react';
-
-import styles from '../styles/activeCards.module.scss';
-import { ReactComponent as CardIcon } from '../images/cardIcon.svg';
-
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import styles from '../styles/activeCards.module.scss';
+import { ReactComponent as CardIcon } from '../images/cardIcon.svg';
 
 const cards = [
   {
@@ -31,6 +30,20 @@ const cards = [
   },
 ];
 
+/**
+ *
+ * @param { number } accountNumber
+ */
+
+const splitCardNumber = (accountNumber) => {
+  return accountNumber
+    .toString()
+    .match(/.{1,4}/g)
+    .map((element, index) => {
+      return <span key={`${element}-${index}`}>{element}</span>;
+    });
+};
+
 const ActiveCards = () => {
   return (
     <section className={styles.container}>
@@ -40,22 +53,6 @@ const ActiveCards = () => {
           speed={500}
           slidesToShow={1}
           slidesToScroll={1}
-          responsive={[
-            {
-              breakpoint: 800,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-              },
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-              },
-            },
-          ]}
           dots
           centerMode={true}
           centerPadding='50px'
@@ -66,12 +63,7 @@ const ActiveCards = () => {
             return (
               <div className={styles.containerCardsEachCard} key={id}>
                 <CardIcon />
-                <div className={styles.containerCardsEachCardNumber}>
-                  <span>4317</span>
-                  <span>4317</span>
-                  <span>4317</span>
-                  <span>4317</span>
-                </div>
+                <div className={styles.containerCardsEachCardNumber}>{splitCardNumber(number)}</div>
                 <div className={styles.containerCardsEachCardMeta}>
                   <div className={styles.containerCardsEachCardMetaSubSection}>
                     <span className={styles.tinyText}>Card Holder</span>

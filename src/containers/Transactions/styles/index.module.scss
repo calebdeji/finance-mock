@@ -13,5 +13,6 @@
   .container {
     grid-auto-flow: row;
     grid-template-areas: 'recent-transactions' 'transactions-summary' 'users-transactions' 'subrecent-transactions' 'active-cards' 'map';
+    grid-template-columns: 1fr;
   }
 }
